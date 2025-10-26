@@ -1,0 +1,9 @@
+# zlaude configuration file example
+# Copy this to ~/.zlaude/config and add your API key
+#
+# Get your API key from: https://z.ai/manage-apikey/apikey-list
+
+ZLAUDE_API_KEY=your_zai_api_key_here
+
+# Optional: You can also set these in your environment or shell profile
+# export ZLAUDE_API_KEY=your_zai_api_key_here
