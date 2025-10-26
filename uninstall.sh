@@ -40,7 +40,7 @@ echo -e "${YELLOW}WARNING: This will remove:${NC}"
 [ -d "$ZLAUDE_CONFIG_DIR" ] && echo "  • Config directory: $ZLAUDE_CONFIG_DIR (contains API keys)"
 echo ""
 
-read -p "Are you sure you want to continue? (y/N) " -n 1 -r
+read -p "Are you sure you want to continue? (y/N) " -n 1 -r </dev/tty
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo "Uninstall cancelled."
@@ -73,7 +73,7 @@ fi
 if [ -d "$ZLAUDE_CONFIG_DIR" ]; then
     echo ""
     echo -e "${YELLOW}Config directory contains your API key and settings.${NC}"
-    read -p "Remove config directory? (y/N) " -n 1 -r
+    read -p "Remove config directory? (y/N) " -n 1 -r </dev/tty
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo -n "Removing config directory... "

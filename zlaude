@@ -56,7 +56,7 @@ configure() {
     echo "Please enter your z.ai API key."
     echo "You can get one from: https://z.ai/manage-apikey/apikey-list"
     echo ""
-    read -p "API Key: " api_key
+    read -p "API Key: " api_key </dev/tty
 
     if [ -z "$api_key" ]; then
         echo -e "${RED}Error: API key cannot be empty${NC}"

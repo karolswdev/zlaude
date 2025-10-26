@@ -37,7 +37,7 @@ if ! command -v node &> /dev/null; then
     echo "Claude Code requires Node.js 18 or newer."
     echo "Please install Node.js from: https://nodejs.org/"
     echo ""
-    read -p "Do you want to continue anyway? (y/N) " -n 1 -r
+    read -p "Do you want to continue anyway? (y/N) " -n 1 -r </dev/tty
     echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
         exit 1
@@ -52,7 +52,7 @@ if ! command -v claude &> /dev/null; then
     echo -e "${YELLOW}⚠${NC}  Claude Code is not installed"
     echo ""
     echo "Would you like to install Claude Code now?"
-    read -p "(y/N) " -n 1 -r
+    read -p "(y/N) " -n 1 -r </dev/tty
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo ""
@@ -88,7 +88,7 @@ echo "  1) /usr/local/bin (recommended, requires sudo)"
 echo "  2) ~/.local/bin (user only, no sudo required)"
 echo "  3) Custom path"
 echo ""
-read -p "Choice (1-3) [1]: " install_choice
+read -p "Choice (1-3) [1]: " install_choice </dev/tty
 install_choice=${install_choice:-1}
 
 case $install_choice in
@@ -102,7 +102,7 @@ case $install_choice in
         mkdir -p "$INSTALL_DIR"
         ;;
     3)
-        read -p "Enter custom path: " INSTALL_DIR
+        read -p "Enter custom path: " INSTALL_DIR </dev/tty
         INSTALL_DIR=$(eval echo "$INSTALL_DIR")
         NEEDS_SUDO=false
         mkdir -p "$INSTALL_DIR"
@@ -146,7 +146,7 @@ echo -e "${BLUE}Configuration${NC}"
 echo "────────────────────────────────────────"
 echo ""
 echo "Would you like to configure your z.ai API key now?"
-read -p "(y/N) " -n 1 -r
+read -p "(y/N) " -n 1 -r </dev/tty
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo ""
